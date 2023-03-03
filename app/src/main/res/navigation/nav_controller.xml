@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_controller"
+    app:startDestination="@id/loginFragment">
+    <fragment
+        android:id="@+id/fragmentCalendario"
+        android:name="es.grupo04.views.FragmentCalendario"
+        android:label="fragment_calendario"
+        tools:layout="@layout/fragment_calendario" >
+        <action
+            android:id="@+id/deCalendarioAGuardias"
+            app:destination="@id/fragmentGuardias" />
+        <action
+            android:id="@+id/deCalendarioAAvisos"
+            app:destination="@id/fragmentAviso" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAviso"
+        android:name="es.grupo04.views.FragmentAviso"
+        android:label="fragment_aviso"
+        tools:layout="@layout/fragment_aviso" >
+        <action
+            android:id="@+id/deAvisoAHoras"
+            app:destination="@id/fragmentHoras" />
+        <argument
+            android:name="fechaAviso"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentGuardias"
+        android:name="es.grupo04.views.FragmentGuardias"
+        android:label="fragment_guardias"
+        tools:layout="@layout/fragment_guardias" >
+        <action
+            android:id="@+id/action_fragmentGuardias_to_fragmentCalendario"
+            app:destination="@id/fragmentCalendario" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentHoras"
+        android:name="es.grupo04.views.FragmentHoras"
+        android:label="fragment_horas"
+        tools:layout="@layout/fragment_horas" >
+        <argument
+            android:name="aviso"
+            app:argType="es.grupo04.modelo.Aviso_Guardia" />
+        <action
+            android:id="@+id/action_fragmentHoras_to_fragmentCalendario"
+            app:destination="@id/fragmentCalendario" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="es.grupo04.views.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_fragmentCalendario"
+            app:destination="@id/fragmentCalendario" />
+    </fragment>
+</navigation>

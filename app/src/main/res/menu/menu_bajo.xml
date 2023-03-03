@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/guardias"
+        android:icon="@android:drawable/ic_menu_mylocation"
+        android:title="@string/guardias" />
+    <item
+        android:id="@+id/avisos"
+        android:icon="@android:drawable/ic_media_next"
+        android:title="@string/aviso" />
+    <item
+        android:id="@+id/volver"
+        android:icon="@android:drawable/ic_media_next"
+        android:title="@string/volver" />
+
+</menu>
